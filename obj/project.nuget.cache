@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "z2WWGbJQnZDBB2ynJxmxlPLN/oo1CeI8tGbVb7C4LzDFr5BMuwkCP3QJT+7TSUj/oEUkW3a6mFnE/mRMzVFdZA==",
+  "dgSpecHash": "JF1ynCkcfpvHhvctrFQK6yisF4rRXUlQs47EzVj1zd/u1lG4npk6Su6hVVZWMgDxsAMcv3RaMXFqpftFKvu49w==",
   "success": true,
   "projectFilePath": "C:\\indra\\selecao-dotnet\\Shop.csproj",
   "expectedPackageFiles": [
@@ -62,6 +62,8 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Infopublic-Dell-Joao\\.nuget\\packages\\sendgrid\\9.18.0\\sendgrid.9.18.0.nupkg.sha512",
+    "C:\\Users\\Infopublic-Dell-Joao\\.nuget\\packages\\starkbank-ecdsa\\1.2.0\\starkbank-ecdsa.1.2.0.nupkg.sha512",
     "C:\\Users\\Infopublic-Dell-Joao\\.nuget\\packages\\swashbuckle.aspnetcore\\5.0.0\\swashbuckle.aspnetcore.5.0.0.nupkg.sha512",
     "C:\\Users\\Infopublic-Dell-Joao\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.0.0\\swashbuckle.aspnetcore.swagger.5.0.0.nupkg.sha512",
     "C:\\Users\\Infopublic-Dell-Joao\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.0.0\\swashbuckle.aspnetcore.swaggergen.5.0.0.nupkg.sha512",

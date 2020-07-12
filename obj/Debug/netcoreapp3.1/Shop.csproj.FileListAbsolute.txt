@@ -196,3 +196,5 @@ C:\indra\selecao-dotnet\obj\Debug\netcoreapp3.1\staticwebassets\Shop.StaticWebAs
 C:\indra\selecao-dotnet\obj\Debug\netcoreapp3.1\Shop.dll
 C:\indra\selecao-dotnet\obj\Debug\netcoreapp3.1\Shop.pdb
 C:\indra\selecao-dotnet\obj\Debug\netcoreapp3.1\Shop.genruntimeconfig.cache
+C:\indra\selecao-dotnet\bin\Debug\netcoreapp3.1\SendGrid.dll
+C:\indra\selecao-dotnet\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll

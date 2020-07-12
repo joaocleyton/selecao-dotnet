@@ -7,7 +7,7 @@ public class Category
     public int Id {get; set;}
 
 
-    [Required(ErrorMessage="Esse campo é obrigatório")]
+    [Required(ErrorMessage="Descrição da cateoria é um campo obrigatório")]
     [MaxLength(60, ErrorMessage="Este campo deve conter entre 3 e 60 caracteres")]
     [MinLength(3, ErrorMessage="Esse campo deve conter entre 3 e 60 caracateres")]
 

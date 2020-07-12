@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Cursos_Indra.Dados;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using System;
 
 namespace Cursos_Indra.Controllers
 {
@@ -86,6 +87,33 @@ namespace Cursos_Indra.Controllers
             }
 
         }
+
+        [HttpDelete]
+        [Route("{id:int}/{estudante:int}")]
+        //[Authorize(Roles = "estudante")]
+        public async Task<ActionResult<Cartao>> Delete(int id, int estudante,
+        [FromServices]DataContext context)
+        {   
+            try
+            {
+
+                var __cartao = await context.Cartoes.FirstOrDefaultAsync(x => x.Id.Equals(id) && x.EstudanteId.Equals(estudante));
+
+                if(__cartao == null)        
+                    return NotFound(new {message = "Curso não encontrado"});
+
+        
+            
+                context.Cartoes.Remove(__cartao);
+                await context.SaveChangesAsync();
+                return Ok(new {message = "Cartão removido com sucesso"});
+            
+            }
+            catch 
+            {            
+                return BadRequest(new {messsage = "Não foi possível remover o Cartão"});
+            }    
+    }
 
 
     }

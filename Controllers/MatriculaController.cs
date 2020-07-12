@@ -7,11 +7,17 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Cursos_Indra.Services;
 
+using System;
+using SendGrid;
+using SendGrid.Helpers.Mail;
+
+
 namespace Cursos_Indra.Controllers
 {
     [Route("v1/matriculas")]
     public class MatriculaController: ControllerBase
     {
+        /**/                                
         [HttpGet]
         [Route("")]   
         [AllowAnonymous]
@@ -52,7 +58,7 @@ namespace Cursos_Indra.Controllers
 
 
         [HttpGet]
-        [Route("alunos/{id:int}")]
+        [Route("estudante/{id:int}")]
         [AllowAnonymous]
         public async Task<ActionResult<List<Matricula>>> GetByAlunos(int id, [FromServices]DataContext context )
         {
@@ -73,22 +79,31 @@ namespace Cursos_Indra.Controllers
         //[Authorize(Roles = "estudante")]
         [AllowAnonymous]
         public async Task<ActionResult<Matricula>> Post([FromServices] DataContext context, [FromBody] Matricula model)
-        {
+        {            
             if(ModelState.IsValid)
-            {               
+            {                                    
                  var _cartao = await context.Cartoes.Include(c => c.Estudante).AsNoTracking().FirstOrDefaultAsync(x => x.EstudanteId.Equals(model.EstudanteId));
 
                 //Checar Pagamentos                
                 if (PagamentoService.EnviarPagamento(_cartao))
                 {
-                    //Checar E-mail                
-                   if (EmailService.EnviarEmail(model))
+                    
+                    model.status = "Pg Ok";
+                    context.Matriculas.Add(model);
+
+
+                    var _estudante = await context.Estudantes.AsNoTracking().FirstOrDefaultAsync(x => x.Id.Equals(model.EstudanteId));
+                    var _curso = await context.Cursos.AsNoTracking().FirstOrDefaultAsync(x => x.Id.Equals(model.EstudanteId));
+
+                    //Checar E-mail                       
+                    if (EmailService.EmailPagamento(_estudante, _curso))
                     {
-                        model.status = "Pg Ok - Email Ok";
+                        model.status += " - Email Ok";
                     }
                     
-                    context.Matriculas.Add(model);
+                    
                     await context.SaveChangesAsync();
+                    Console.WriteLine("Nome do Estudante: 3 " + model.Estudante.nome);
 
                 }                
                             

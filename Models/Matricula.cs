@@ -10,15 +10,15 @@ public  class Matricula
             
     public string status {get; set;}
 
-    [Required(ErrorMessage = "Este campo é obrigatório")]    
+    [Required(ErrorMessage = "Data da Matricula é um obrigatório")]    
     public DateTime dataMatricula {get;set;}
 
-    [Required(ErrorMessage = "Este campo é obrigatório")]
+    [Required(ErrorMessage = "Id do Estudante é um campo obrigatório")]
     [Range(1,int.MaxValue, ErrorMessage="Estudante inválido")]
     public int EstudanteId {get;set;}
     public Estudante Estudante {get;set;}
 
-    [Required(ErrorMessage = "Este campo é obrigatório")]
+    [Required(ErrorMessage = "Id do Curso é um campo obrigatório")]
     [Range(1,int.MaxValue, ErrorMessage="Curso inválida")]
     public int CursoId {get;set;}
 

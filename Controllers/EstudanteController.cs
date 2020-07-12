@@ -94,33 +94,6 @@ public class EstudanteController: ControllerBase
 
 
     }
-
-    [HttpDelete]
-    [Route("{id:int}")]
-    //[Authorize(Roles = "funcionario")]
-    [AllowAnonymous]  
-    public async Task<ActionResult<Estudante>> Delete(int id,
-    [FromServices]DataContext context)
-    {
-        var _estudante = await context.Estudantes.FirstOrDefaultAsync(x => x.Id.Equals(id));
-
-        if(_estudante == null)        
-            return NotFound(new {message = "Estudante não encontrado"});
-
-        
-        try
-        {
-            context.Estudantes.Remove(_estudante);
-            await context.SaveChangesAsync();
-            return Ok(new {message = "Estudante removida com sucesso"});
-            
-        }
-        catch 
-        {            
-            return BadRequest(new {messsage = "Não foi possível remover o estudante"});
-        }
-
     
-    }
 
 }

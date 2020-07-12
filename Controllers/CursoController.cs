@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Cursos_Indra.Controllers
 {
     [Route("v1/cursos")]
-    public class ProductController: ControllerBase
+    public class CursoController: ControllerBase
     {
         [HttpGet]
         [Route("")]   

@@ -14,6 +14,7 @@ namespace Cursos_Indra.Services
         public static Boolean EnviarPagamento(Cartao cartao)
         {                        
             if(cartao != null){                
+                //Processos de Pagamento
                 return true;
             }
             else{
